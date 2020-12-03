@@ -1,6 +1,6 @@
 # THM_Walkthrough
 
-## Advent of cyber 2 walkthrough - stepwise walkthrough 
+## Advent of cyber 2 - stepwise walkthrough 
 
 Hey Guys! Hope you all doing good. 
 
