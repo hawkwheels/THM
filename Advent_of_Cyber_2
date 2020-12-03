@@ -1,8 +1,23 @@
-Day 1 Solution Steps:
-Install browser extensions like ‘edit this cookie’ or any other cookie manager browser add
-After login to the site - click on the add to view the cookie name (key) with just a one click - rather that going into the dev tools
-Copy the auth cookie value and navigate to the cyberchef site https://gchq.github.io/CyberChef/ paste the same - a magic stick will appear click on it - it will show the encoded format and the decoded value below
-The decoded value is in key:value pair in ‘JSON’ format
-Replace your username in the decoded value with ‘santa’ value and encode the same with ‘Hex’
-Copy paste the resulted value into your auth cookie and refresh the site - boom! You will logged in as santa user - activate all the button to get the flags 
+Hey Guys! Hope you all doing good. 
+
+I will post the solution for the advent of cyber 2 room here after 1 or 2 days of breathing team for you to try by yourself. 
+Room Link: https://tryhackme.com/room/adventofcyber2 
+
+Important Note: if you still feel its hard and not getting the concepts, kindly post the same in the Issues tab 
+
+Day 1 Solution Steps: A christmas crisis
+1. Install browser extensions like ‘edit this cookie’ or any other cookie manager browser add
+2. After login to the site - click on the add to view the cookie name (key) with just a one click - rather that going into the dev tools
+3. Copy the auth cookie value and navigate to the cyberchef site https://gchq.github.io/CyberChef/ paste the same - a magic stick will appear click on it - it will show the encoded format and the decoded value below
+4. The decoded value is in key:value pair in ‘JSON’ format
+5. Replace your username in the decoded value with ‘santa’ value and encode the same with ‘Hex’
+6. Copy paste the resulted value into your auth cookie and refresh the site - boom! You will logged in as santa user - activate all the button to get the flags 
+
+Day 2 Solution Steps: The elf strikes back.
+1. At the end of you machine target IP add ‘/id=ODIzODI5MTNiYmYw’ it will look something like http://<IP>?id=ODIzODI5MTNiYmYw
+2. Analysis response page script for the allowed extensions (.jpeg, .png) - the answer is ‘images’
+3. Do dirsearch for the target machine with the default scripts or analysis the upload file POST request directory - the answer is ‘/uploads’
+4. Upload the php reverse shell - get the php file from https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php copy paste the code, edit the IP and port with your machine IP and your wish port and rename the extension as .jpeg.png and upload the same
+5. Netcat with the flag ‘-nvlp’ on the same port 
+6. Access the file in http://<IP>/uploads/<file>.php you will get the reverse shell, cat the flag file in /var/www/flag.txt to get the same   
 
