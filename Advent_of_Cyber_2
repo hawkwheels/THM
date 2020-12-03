@@ -1,1 +1,8 @@
+Day 1 Solution Steps:
+Install browser extensions like ‘edit this cookie’ or any other cookie manager browser add
+After login to the site - click on the add to view the cookie name (key) with just a one click - rather that going into the dev tools
+Copy the auth cookie value and navigate to the cyberchef site https://gchq.github.io/CyberChef/ paste the same - a magic stick will appear click on it - it will show the encoded format and the decoded value below
+The decoded value is in key:value pair in ‘JSON’ format
+Replace your username in the decoded value with ‘santa’ value and encode the same with ‘Hex’
+Copy paste the resulted value into your auth cookie and refresh the site - boom! You will logged in as santa user - activate all the button to get the flags 
 
