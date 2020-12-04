@@ -23,3 +23,11 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 5. Netcat with the flag ‘-nvlp’ on the same port 
 6. Access the file in http://<IP>/uploads/<file>.php you will get the reverse shell, cat the flag file in /var/www/flag.txt to get the same   
 
+## Day 3 Solution Steps: The Christmas chaos.
+1. Load the target site IP into your browser
+2. Configure the browser proxy with burp as instructed in the room 
+3. Give some test credentials in the login page and capture the request in burp 
+4. Sent the request to intruder by pressing ‘Ctrl+i’ then do the necessary steps to brute force the username and password as instructed in the room description 
+5. Start the attack, after the attack completes analys the length of the response - one response will have a lesser response length
+6. Select that response and analysis it will redirect to the site post successful login - note the username and password and use the same to login to the site - you will get the flag for this task
+
