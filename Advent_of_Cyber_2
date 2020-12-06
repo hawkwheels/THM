@@ -31,3 +31,11 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 5. Start the attack, after the attack completes analys the length of the response - one response will have a lesser response length
 6. Select that response and analysis it will redirect to the site post successful login - note the username and password and use the same to login to the site - you will get the flag for this task
 
+## Day 4 Solution Steps: Santa's watching 
+1. For the question “Given the URL "http://shibes.xyz/api.php", what would the entire wfuzz command look like to query the "breed" parameter using the wordlist "big.txt" (assume that "big.txt" is in your current directory)” - construct the command which will look like “wfuzz -c -z file,big.txt http://shibes.xyz/api.php?breed=FUZZ”
+2. For the question “Use GoBuster (against the target you deployed -- not the shibes.xyz domain) to find the API directory. What file is there?” run the following command “gobuster dir -u http://10.10.247.63/api/ -w /usr/share/wordlists/dirb/big.txt -x php,txt” which will give 200 response code for the file ‘site-log.php’
+3. To get the correct date we have to fuzz the date parameter from the API endpoint http://<IP>/api/web-log.php?date=?
+4. Run the below wfuzz command to get the correct date 
+    ‘sudo wfuzz -c -z file,wordlist -u http://10.10.247.63/api/site-log.php?date=FUZZ --hw 0’
+
+## Day 5 Solution Steps:
