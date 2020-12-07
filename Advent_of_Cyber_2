@@ -38,4 +38,11 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. Run the below wfuzz command to get the correct date 
     ‘sudo wfuzz -c -z file,wordlist -u http://10.10.247.63/api/site-log.php?date=FUZZ --hw 0’
 
-## Day 5 Solution Steps:
+## Day 5 Solution Steps: Someone Stole Santa's Gift list
+1. For the 1st we have guess for that we can use the general used in the site and website context - use hint for the same (as it says two words from the question) - ../santapanel will get you the site
+2. On the login page use the sql command [ ‘ OR 1=1 /* ] on the username and leave the password blank  - this will take you into the site as the default user (may be admin)
+3. On the website again use the same payload [ ‘ OR 1=1 /* ] this will create a true statement and will list all the entries available in the gift database - count it and enter the same
+4. From the list for the name ‘paul’ we have ‘Github ownership’ as the gift enter the same 
+5. Give some text at the search field and capture the request using the burp - Right click and save the request - on the sqlmap provide the comment sudo ‘sqlmap -r sqlrequest --batch --level 3 --risk 3 --dump’ to get the flag and admin password 
+
+## Day 6 Solution Steps:
