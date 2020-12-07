@@ -45,4 +45,9 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. From the list for the name ‘paul’ we have ‘Github ownership’ as the gift enter the same 
 5. Give some text at the search field and capture the request using the burp - Right click and save the request - on the sqlmap provide the comment sudo ‘sqlmap -r sqlrequest --batch --level 3 --risk 3 --dump’ to get the flag and admin password 
 
-## Day 6 Solution Steps:
+## Day 6 Solution Steps: Be Careful with what you wish on a christmas night
+1. In the wise filed we have the stores XSS where our payload getting stored in BD with being sanitized at the client and server end 
+2. Our payload are getting reflected back in to the site on the query parameter ‘q’
+3. Open the ZAP proxy application and paste the URL into the automated scan and click on scan for the automated scanning - once the scan completes click the alert tab available at the bottom pan where you can see the potentials vulnerabilities (here we have 5) - In those 2 are related to XSS
+
+## Day 6 Solution Steps: typing ...
