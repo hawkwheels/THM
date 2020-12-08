@@ -50,4 +50,12 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 2. Our payload are getting reflected back in to the site on the query parameter ‘q’
 3. Open the ZAP proxy application and paste the URL into the automated scan and click on scan for the automated scanning - once the scan completes click the alert tab available at the bottom pan where you can see the potentials vulnerabilities (here we have 5) - In those 2 are related to XSS
 
-## Day 7 Solution Steps: typing ...
+## Day 7 Solution Steps: the Grinch really did steal a christmas 
+1. Download the zip file from the challenge and unzip it - open the pcap1 file with wireshark tool and apply the filter ‘icmp’ to get all the ICMP related packets
+2. For the question 2 we have to give the filter as ‘http.request.method == GET’ (gap and capital letters are important)
+3. Apply the above filter and click on file > export object > http - select the /post/reindeer-of-the-week file and save the same as <file>.html - open this file with any browser and on analysing the content header it is about the topic ‘Reindeer-of-the-week’ performance letter in a internal blog post
+4. Open the pcap2 file with wireshark and apply the filter ftp - analyse the traffic we can see a wrong password being entered error replay from the ftp server the password is ‘plaintext_password_fiasco’
+5. If you try to see the content of SSH protocol you can’t as its been encrypted - answer for the 5th question 
+6. Open the pcap3 file and apply the filter http - check for the ‘/christmas.zip’ file packet in the request and export the same under http protocol - save the content in .zip format - when you extract and open the file wishlist.txt you can see the wishes of McSkidy. Where he want to replace ‘rubber ducky’ 
+
+## Day 8 Solution Steps: typing ...
