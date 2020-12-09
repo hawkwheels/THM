@@ -58,4 +58,11 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 5. If you try to see the content of SSH protocol you can’t as its been encrypted - answer for the 5th question 
 6. Open the pcap3 file and apply the filter http - check for the ‘/christmas.zip’ file packet in the request and export the same under http protocol - save the content in .zip format - when you extract and open the file wishlist.txt you can see the wishes of McSkidy. Where he want to replace ‘rubber ducky’ 
 
-## Day 8 Solution Steps: typing ...
+## Day 8 Solution Steps: whats under the chrismas tree.
+1. Snort is a free open source network intrusion detection system (IDS) and intrusion prevention system (IPS) created in 1998 by Martin Roesch, founder and former CTO of Sourcefire. Snort is now developed by Cisco, which purchased Sourcefire in 2013.
+2. Run the nmap against the target - ‘sudo nmap <IP>’ we will get port 80, 2222 and 3389.
+3. For the question 3 and 4 run the nmap commands ‘sudo nmap -Pn <IP>’ , ‘sudo nmap -A <IP>’ and ‘sudo nmap -sV <IP>’ and analyze the result which will provide answers for the rest of the questions 
+4. From the ‘sudo nmap -sV <IP>’ result we can view that on the port 2222 ubuntu variant of Linux server is running 
+5. On the scan ‘sudo nmap -A <IP>’ under port 80 you can see the HTTP-TITLE as ‘Internal Blog’ - so the website is based on Blog format
+
+## Day 9 Solution Steps: typing ...
