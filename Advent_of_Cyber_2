@@ -75,4 +75,10 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 7. Open the shoppinglist.txt and paste the same for the question 3 
 8. Listen via netcat on you local machine once the connection established - cat /root/flag.txt and paste the same for the question 4
 
-## Day 10 Solution Steps: typing ...
+## Day 10 Solution Steps: Don't be selfish!
+1. To get the user list use enum4linux with the following commands ‘enum4linux -U <target IP>’ - this will list all the users and their account for the samba share 
+2. To get the share folder list use enum4linux with the following commands ‘enum4linux -S <target IP>’ - this will list all the share folders available in the samba share 
+3. Try access all the share as some share won’t require password to access it - use the smbclient tool with the command ‘smbclient //<target Ip>/<folder name>’ - press enter if it request to enter password 
+4. As we know we are able to access the tbfc-santa folder without password - enumerate further on this folder - use the command to access the folder ‘smbclient //10.10.23.174/tbfc-santa/’ then give commands like ‘ls’ and more to access the file inside the shared directory.
+
+## Day 11 Solution Steps: typing ...
