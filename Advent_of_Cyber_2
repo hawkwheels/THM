@@ -81,4 +81,11 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 3. Try access all the share as some share won’t require password to access it - use the smbclient tool with the command ‘smbclient //<target Ip>/<folder name>’ - press enter if it request to enter password 
 4. As we know we are able to access the tbfc-santa folder without password - enumerate further on this folder - use the command to access the folder ‘smbclient //10.10.23.174/tbfc-santa/’ then give commands like ‘ls’ and more to access the file inside the shared directory.
 
-## Day 11 Solution Steps: typing ...
+## Day 11 Solution Steps: The Rogue Gnome
+1. If the privilege escalation involves using a user account to execute commands as an administrator its called vertical privilege escalation 
+2. The name of the file that contains a list of users who are a part of the sudo group is sudoers
+3. Login to the machine with SSH for the provided credentials 
+4. Use the find command to get the SUID files ‘find / -u=s -file f 2>/dev/null’ it will list many file and binaries where we can run those as root - in that bash is stands out
+5. Search for SUID in the GTFObin site for the bash binary - we can run the bash command like ‘bash -p’ in the provided shell to get the root access shell (bash shell with root access) - cat the flag.txt under /root/ directory
+
+## Day 12 Solution Steps: typing ...
