@@ -88,7 +88,13 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. Use the find command to get the SUID files ‘find / -u=s -file f 2>/dev/null’ it will list many file and binaries where we can run those as root - in that bash is stands out
 5. Search for SUID in the GTFObin site for the bash binary - we can run the bash command like ‘bash -p’ in the provided shell to get the root access shell (bash shell with root access) - cat the flag.txt under /root/ directory
 
-## Day 12 Solution Steps: typing ...
+## Day 12 Solution Steps: Ready, set, elf.
+1. Do an nmap scan on the target with -A flag and look at the web server version on the port 8080 (Apache tomcat 9.0.17)
+2. Do google search for the vulnerabilities in the apache tomcat 9.0.17 version you will get some (2 vulnerabilities one is in yr 2017 and another in 2019) - the CVE witch is related to the RCE /cgi-bin/ - CVE-2019-0232 is the one for this server
+3. Boot the msfconsole in your kali (attacking machine) search for tomcat 9.0 you will get 1 explicit use the same through cmd ‘use 1‘ and set all the options like RHOST, LHOST , TARGETURI - we have to go gobuster to get this target in actual case as there is a hint given for this challenge - use /cgi-bin/elfwhacker.bat and run the exploit to get the meterpreter shell
+4. From the meterpreter shell Cat the flag file available in the cgi-bin folder 
+5. From the same meterpreter shell type ‘use priv’ to load the privilege escalation scripts then type ‘getsystem’ to escalate to admin - type ‘getuid‘ to confirm the same or run 
+
 
 ## Day 13 Solution Steps: Coal for christmas 
 1. Nmap the target with command nmap <target IP> and it has 3 open ports in the first 1000. Where we have port 23 (telnet port) - not been used as it has been replaced by SSH 
