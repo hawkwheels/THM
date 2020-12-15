@@ -95,7 +95,6 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. From the meterpreter shell Cat the flag file available in the cgi-bin folder 
 5. From the same meterpreter shell type ‘use priv’ to load the privilege escalation scripts then type ‘getsystem’ to escalate to admin - type ‘getuid‘ to confirm the same or run 
 
-
 ## Day 13 Solution Steps: Coal for christmas 
 1. Nmap the target with command nmap <target IP> and it has 3 open ports in the first 1000. Where we have port 23 (telnet port) - not been used as it has been replaced by SSH 
 2. As the port telnet is open - we can grap the banner is they have any connect to the target IP using the telnet command as ‘telnet MACHINE_IP <PORT_FROM_NMAP_SCAN>’ - you will get the username and password to access the machine - connect to it either using the telnet or SSH
@@ -106,4 +105,16 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 7. After the exploit execution - switch to the firefart user using the cmd ‘su firefart’ - BOOM! You are root now - verify the same with cmd ‘id’
 8. Now on the same directory create a file ‘coal’ using the cmd ‘touch coal’ then type as follow ‘tree | md5sum > coal’ then ‘cat coal’ to get the hash for the final question of the day 
 
-## Day 14 Solution Steps: typing ...
+## Day 14 Solution Steps: where's Rudolph
+1. Google search the rudolph user name - IGuidetheClaus with the reddit tag, it will bring up the profile - navigate to comments  - Reddit comments: https://www.reddit.com/user/IGuidetheClaus2020/comments/ 
+2. Analysis the comments made by rudolph from there we can see it was born in chicago
+3. Google search: “robert creator full name - chicago rudolph” to get the creator’s last name - as he wrote a boot with respect to rudolph his will bring up his wiki page
+4. On the site namechk https://namechk.com/ enter the username where it shows the other social media sites where it has the same username - where you can see twitter is greyed out 
+5. Navigate to that twitter handel and grep the username - Twitter handel: https://twitter.com/iguideclaus2020 
+6. On analysing the twitter field we came to know Rudolph's favorite TV show appears to be bachelorette
+7. Download the image that he attached during the parade and use google reverse search to get the details regarding the image or Use exiftool to get the image information regarding the location - copy past in the google map to get the location - chicago 
+8. To get the flag use exiftool with the cmd ‘exiftool <image>, the flag will be available under copyright - {FLAG}ALWAYSCHECKTHEEXIFD4T4 
+9. Use the Online exiftool: http://exif.regex.info/exif.cgi upload the image and note down the location co-ordinates - 41.891815, -87.624277 
+10. Copy paste the above co-ordinates and look for the near by hotel with the name ‘Magnificent Mile’ give the hotel streen number - 540
+
+## Day 15 Solution Steps: typing ...
