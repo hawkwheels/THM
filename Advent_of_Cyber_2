@@ -117,4 +117,16 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 9. Use the Online exiftool: http://exif.regex.info/exif.cgi upload the image and note down the location co-ordinates - 41.891815, -87.624277 
 10. Copy paste the above co-ordinates and look for the near by hotel with the name ‘Magnificent Mile’ give the hotel streen number - 540
 
-## Day 15 Solution Steps: typing ...
+## Day 15 Solution Steps: There's a python in my stocking !
+1. The output of True+True is 2 - In python the value ‘True’ will  be considered as value 1 and ‘False’ will be considered as 0 in the arithmetic operation.
+2. The database for installing other people's libraries called Pypi and its available in https://pypi.org/ Community 
+3. The output of bool(“False”) - the bool() function will determine whether something is inside or not based on that output as True or False - as we passed the string with the value “False” it will o/p as True - if you passed the empty string then it will output it as False
+4. The library used to download the HTML of a webpage is requests 
+5. The o/p of the below code is [1, 2, 3, 6] because we are passing the variable x to y as pass by reference (default python behaviour) so any changes made to the value of y will get reflected to variable x after execution 
+    x = [1, 2, 3]
+    y = x
+    y.append(6)
+    print(x)
+6. ‘Pass by Reference’ is the reason behind the previous question o/p
+
+## Day 16 Solution Steps: typing ...
