@@ -129,4 +129,18 @@ Room Link: https://tryhackme.com/room/adventofcyber2
     print(x)
 6. ‘Pass by Reference’ is the reason behind the previous question o/p
 
-## Day 16 Solution Steps: typing ...
+## Day 16 Solution Steps: Help! where is Santa.
+1. Do nmap on the target to get the web server port - cmd ‘nmap <target IP>’ - port 8000 is open
+2. Navigate to the website ‘http://<IP>/static/index.html’ Right click on the same and click view page source - on analysis we can see an valid url http://machine-ip/api/api-key - so the directory has to be like /api/
+3. Write the below script in a python file and run the same 
+    # Importing
+    import requests 
+
+    for api_key in range (1,100,2):
+    # requests.get downloads the webpage and stores it as a variable
+        html = requests.get(f'http://10.10.95.40:8000/api/{api_key}') 
+        print (html.text)
+4. This will loop through the API key in odd numbers from 1-100 and you will get the valid response on key number 57
+Enter the url ‘http://IP/api/57’ you will get the santa location - winter wonderland, hyde park, London
+
+## Day 17 Solution Steps: typing ...
