@@ -143,4 +143,14 @@ Room Link: https://tryhackme.com/room/adventofcyber2
 4. This will loop through the API key in odd numbers from 1-100 and you will get the valid response on key number 57
 Enter the url ‘http://IP/api/57’ you will get the santa location - winter wonderland, hyde park, London
 
-## Day 17 Solution Steps: typing ...
+
+## Day 17 Solution Steps: ReverseELFneering 
+1. Load the radare2 with the challenge1 file in debug mode with the command ‘r2 -d ./challenge’
+2. Provide the ‘aa’ command to do a complete analysis 
+3. See all the involved in the program with the command ‘afl’ if what to see main function related the do ‘afl | grep main’
+4. Decompose the main function with the command ‘pdf @main’ - we have 3 variable and some operation in it
+5. From the instruction we can say the value of local_ch when its corresponding movl instruction is called is 1
+6. The value of eax when the imull instruction is called is 6 as the value of eax (1:from instruction 5) and local_ch (6: from instruction 3) is getting multiplied and assigned to eax, so 1x6 is 6. 
+7. The value of local_4h before eax is set to 0 is 6 as the value of eax (6) from instruction 6 is assigned to local_4h on instruction 7 
+
+## Day 18 Solution Steps: typing ...
