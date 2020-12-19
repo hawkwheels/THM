@@ -153,4 +153,11 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 6. The value of eax when the imull instruction is called is 6 as the value of eax (1:from instruction 5) and local_ch (6: from instruction 3) is getting multiplied and assigned to eax, so 1x6 is 6. 
 7. The value of local_4h before eax is set to 0 is 6 as the value of eax (6) from instruction 6 is assigned to local_4h on instruction 7 
 
-## Day 18 Solution Steps: typing ...
+## Day 18 Solution Steps: The Bits of Christmas 
+1. Login to the target system using xfree RDP with the cmd ‘xfreerdp /u:cmnatic /p:Adventofcyber! /cert:ignore /v:10.10.67.163’
+2. On the desktop open the ‘TBFC_App’ it will ask for a password - to get the same load the ILSpy application and load the application from the desktop
+3. Decompile the application and view the various function and methods used - in this CrakMe function looks different 
+4. Decomplite the same and look at the ButtonActive_Click method where we can see the print statement of the application after successful login and for the failure attempt - flag thm{046af}
+5. Observe the third line where we can see some strings which look like a password - santapassword321 - copy and paste the same in the application - where it will give you the flag
+
+## Day 19 Solution Steps: typing ...
