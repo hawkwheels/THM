@@ -160,4 +160,12 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 4. Decomplite the same and look at the ButtonActive_Click method where we can see the print statement of the application after successful login and for the failure attempt - flag thm{046af}
 5. Observe the third line where we can see some strings which look like a password - santapassword321 - copy and paste the same in the application - where it will give you the flag
 
-## Day 19 Solution Steps: typing ...
+## Day 19 Solution Steps: Thenaughty or Nice List
+1. Connect to the THM VPN and load the target IP in your browser - in the landing page search for any text and the URL will look like ‘http://10.10.99.122/?proxy=http%3A%2F%2Flist.hohoho%3A8080%2Fsearch.php%3Fname%3Dtest ’
+2. Note the proxy parameter - here the site server takes the input and search it locally with the internal domain name list.hohoho on the port 8080
+3. Change the port to some other port and observer the result and change the domain like ‘localhost’ or ‘127.0.0.1’ and observe the result 
+4. For any of the host or port the server is blocking other then list.hohoho - this can be bypassed by making this domain as the subdomain to some other domain and passing the request to that domain (our controlled domain so we can resolve the same to a Site IP or to a localhost) - A prebuilt domain for this is localtest.me, where all its domain and subdomain is resolve to local host (127.0.0.1)
+5. Use the above step to bypass the URL will look like -  http://10.10.99.122/?proxy=http%3A%2F%2Flist.hohoho.localtest.me%3A%2F this URL will give you the password to login as admin (Santa:Be good for goodness sake!)
+6. Login with the same and click on the DeletList Button to get the flag
+
+## Day 20 Solution Steps: typing ...
