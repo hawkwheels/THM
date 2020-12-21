@@ -168,4 +168,14 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 5. Use the above step to bypass the URL will look like -  http://10.10.99.122/?proxy=http%3A%2F%2Flist.hohoho.localtest.me%3A%2F this URL will give you the password to login as admin (Santa:Be good for goodness sake!)
 6. Login with the same and click on the DeletList Button to get the flag
 
-## Day 20 Solution Steps: typing ...
+## Day 20 Solution Steps: PowershELlf to the rescue 
+1. Connect to the machine using SSH and change the shell to powershell
+2. To get the first hidden elf file navigate to ‘Documents’ directory and use the cmd 'get-childitem -hidden’ to list the hidden files and open the same with the cmd ‘get-content e1fone.txt’ - 2 front teeth
+3. Navigate to desktop folder and use cmd ‘get-childitem -directory -hidden’ you will get ‘elf2wo’ as hidden folder, then navigate into in and open the hidden file with the cmd ‘get-content <.txt>’ - Scrooged
+4. To get the hidden directory under windows folder - navigate to windows directory and use the cmd ‘get-childitem -hidden -directory -recurse -erroraction silentlycontinue filter ‘*3*’’ this command will fetch all the hidden directory with the name 3 in it under windows directory recursively - you will get ‘3lfthr3e’ as the folder name 
+5. To get the word count - navigate into the folder with cmd ‘set-location 3lfthr3e’ then use cmd ‘get-content .\1/txt | measure-object -word’ - 9999
+6. To get the words at the index 551 and 6991 use the cmd (get-content .\1.txt)[551] and (get-content .\1.txt)[6991] respectively - red ryder
+7. To get the second half of the answer use the cmd ‘get-content .\2.txt | select-string -pattern “redryder”’ you will get ‘redryderbbgun’ as the filtered text - red ryder bb gun
+
+## Day 21 Solution Steps: typing ...
+
