@@ -177,5 +177,11 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 6. To get the words at the index 551 and 6991 use the cmd (get-content .\1.txt)[551] and (get-content .\1.txt)[6991] respectively - red ryder
 7. To get the second half of the answer use the cmd ‘get-content .\2.txt | select-string -pattern “redryder”’ you will get ‘redryderbbgun’ as the filtered text - red ryder bb gun
 
-## Day 21 Solution Steps: typing ...
+## Day 21 Solution Steps: Time for some ELForensics
+1. To read the content of the original hash stored in the text file, use the cmd ‘get-content .\db file hash.txt’ 
+2. To get the hash of the executable use the command ‘get-filehash -algorithm md5 .\deebee.exe’ 
+3. To find the hidden flag inside the executable run the cmd ‘strings64.exe -accepteula .\deebee.exe’ - the flag will be at above the stream cmd 
+4. When you run the executable with WMIC.exe for the stream ‘hidedb’ with the cmd ‘WMIC.exe process call create $(Resolve-Path .\deebee.exe:hidedb)’ this will pop a command prompt and show you the flag 
+
+## Day 22 Solution Steps: typing ...
 
