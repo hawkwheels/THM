@@ -183,5 +183,13 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 3. To find the hidden flag inside the executable run the cmd ‘strings64.exe -accepteula .\deebee.exe’ - the flag will be at above the stream cmd 
 4. When you run the executable with WMIC.exe for the stream ‘hidedb’ with the cmd ‘WMIC.exe process call create $(Resolve-Path .\deebee.exe:hidedb)’ this will pop a command prompt and show you the flag 
 
-## Day 22 Solution Steps: typing ...
+## Day 22 Solution Steps: Elf McEager became cyberchef 
+1. RDP into the target system - on the desktop folder we have long string of characters as the folder name copy the folder name and decode the same using cyberchef tool - copy the folder name and paste it in the site : https://gchq.github.io/CyberChef/ a magic icon will be appeared on the decode pane click the same you will get the decoded value - password - thegrinchwashere
+2. The left pane shown the info regarding the method used to decode the value - it shows as ‘base64’
+3. After login to the Keepass database - click on the network and double click on the service name you will get the password - make the password visible by clicking the 3 dots in line with the password field - copy the value and paste in the cyberchef - click the magic icon and get the password - sn0wM4n! (the encoded method used is Hex)
+4. Double click on the mail from the popup copy the password and paste the same in the cyber chief - click the magic icon to get the decoded password - ic3Skating! (the encoded method used is HTML entity)
+5. Double click home banking and copy the description - copy only the numbers and select the charcode decode with and set the base as 10 to get further char encoded numbers - again repeat the process and you get a github url for fetching the flag  
+    https://gist.githubusercontent.com/heavenraiza/1d321244c4d667446dbfd9a3298a88b8/raw/7d98f2354f3d36e7122e4cb16f39a39d03392a0e/cyberelf 
+
+## Day 23 Solution Steps: typing ...
 
