@@ -191,5 +191,14 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 5. Double click home banking and copy the description - copy only the numbers and select the charcode decode with and set the base as 10 to get further char encoded numbers - again repeat the process and you get a github url for fetching the flag  
     https://gist.githubusercontent.com/heavenraiza/1d321244c4d667446dbfd9a3298a88b8/raw/7d98f2354f3d36e7122e4cb16f39a39d03392a0e/cyberelf 
 
-## Day 23 Solution Steps: typing ...
+## Day 23 Solution Steps: The Grinch Strikes again!
+1. Connect the machine via RDP and on the desktop there is a file with name Ransomware note - open it and copy the bitcoin address - decode it with base64 you will get ‘nomorebestfestivalcompany’
+2. Navigate to Documents > confidential > see the file extension - .grinch 
+3. On the scheduled task we saw a weird suspicious name in it - opidsfsdf
+4. On the scheduled task ‘opidsfsdf’ under action pane you can see the running task location - c:\Users\administrator\desktop\opidsfsdf.exe
+5. On the task ShadowCopyVolume - under general you can see the volume ID {7a9eea15-0000-0000-0000-010000000000}
+6. When you give the hidden partition a letter (Z) and toggle the hidden file to show you will get a folder called ‘confidential’
+7. Right click the confidential folder and under properties > previous version > restore - the older file will get stored in the same folder - navigate to the same folder and read the password (master) - m33pa55w0rdIZseecure!
+
+## Day 24 Solution Steps: typing ...
 
