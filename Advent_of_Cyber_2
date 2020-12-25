@@ -200,5 +200,34 @@ Enter the url ‘http://IP/api/57’ you will get the santa location - winter wo
 6. When you give the hidden partition a letter (Z) and toggle the hidden file to show you will get a folder called ‘confidential’
 7. Right click the confidential folder and under properties > previous version > restore - the older file will get stored in the same folder - navigate to the same folder and read the password (master) - m33pa55w0rdIZseecure!
 
-## Day 24 Solution Steps: typing ...
+## Day 24 Solution Steps: The trail before Christmas 
+1. Done the namp and found port 80 and 65000 are opened 
+2. The http-title for the website server running on port 65000 is light-cycle
+3. Done gobuster for the wordlist of /usr/share/wordlist/dirbuster/directory-2.3-medium.txt for the file type php
+4. We got index.php, uploads.php, asserts, api and grid as result where ‘uploads.php’ is the file upload hidden php page 
+5. The directory ‘/grid’ where the upload files are getting saved 
+6. Load the /uploads.php’ webpage with the burp proxy interception where you can see 2 .js file (filter.js and upload.js) will get loaded along with the uploads.php file - here we have drop the filter.js file and sent the other request 
+7. Create a reverse shell php file with the listening port of you machine IP and any port and name the file extension as ‘.jpg.php’ extension to bypass the filter 
+8. The uploaded file will be available at /asset directory load the same and trigger the reverse shell
+9. On the shell navigate to /var/www and cat the web.txt for the flag -  THM{ENTER_THE_GRID} 
+10. Upgrade the shell with the following command 
+        Python3 -c ‘import pty; pty.spawn(“/bin/bash”);’
+        Ctrl +Z
+        Stty raw -echo; fg
+        Export TERM=xterm
+11. To get the db username and password navigate to /TheGrid/include and cat the ‘dbauth.php’ file where we get the username and password as - tron:IFightForTheUsers
+12. To get the databases in the machine - use the command ‘mysql -h’ check whether the database is installed or not  - as its available give the command ‘mysql -utron -p’ for the password provide the ‘IFightForTheUsers’ and get the mysql shell interface - To get the database use the cmd ‘show databases;’  - you will get ‘tron’ as DB
+13. Get the password and username from the users in the DB - select the db with the cmd ‘use tron;’ then use the cmd ‘show tables;’ where you will see the ‘users’ table - get all the details in the users table with the cmd ‘SELECT * from USERS’ - you will get ‘flynn:edc621628f6d19a13a00fd683f5e3ff7’ 
+14. Crack the hash using the online tool crachstation crack the hash - @computer@
+15. With the cracked password switch to the new user flynn:@computer@ and cat the user.txt available at flynn’s home folder - THM{IDENTITY_DISC_RECOGNISED}
+16. Check the user group with the cmd ‘id’ - lxd group 
+17. Follow the lxd group linux privilege escalation steps as follow
+        lxc init Alpine test -c security.privileged=true
+        lxc config device add test tester disk source=/ path=/mnt/root recursive=true
+        lxc start test
+        lxc exec test /bin/sh
+        cd  /mnt/root/root
+18. You will get the root directory as the image root user - as per the system we will act as the root and we navigate back to the host system directory via cmd ‘cd /mnt/root/root’ - cat the root flag - THM{FLYNN_LIVES}
+
+## Day 25: Thank you. If possible give a star :)
 
